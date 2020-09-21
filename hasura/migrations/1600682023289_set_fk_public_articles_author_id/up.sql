@@ -1,0 +1,5 @@
+alter table "public"."articles"
+           add constraint "articles_author_id_fkey"
+           foreign key ("author_id")
+           references "public"."users"
+           ("id") on update restrict on delete restrict;
