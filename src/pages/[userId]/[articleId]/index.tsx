@@ -6,6 +6,7 @@ import { useGetArticleQuery } from '@/generated/graphql'
 
 import styles from './index.module.css'
 import { Article } from '@/components/article'
+import { formatDate } from '@/utils/data'
 
 const ArticlePage: NextPage = () => {
   const router = useRouter()
@@ -30,6 +31,7 @@ const ArticlePage: NextPage = () => {
   if (!publishedAt) {
     return <Error statusCode={404} />
   }
+  const { datetime, isNew } = formatDate(new Date(publishedAt), new Date())
   console.log(publishedAt)
   return (
     <div className={styles.contentContainer}>
@@ -42,8 +44,9 @@ const ArticlePage: NextPage = () => {
           <div>
             {user.displayName} @{user.displayId}
           </div>
-          <span className={styles.publishedAt}>
-            {new Date(publishedAt).toLocaleString()}
+          <span>
+            <span className={styles.publishedAt}>{datetime}</span>
+            {isNew ? <span className={styles.isNew}>New</span> : ''}
           </span>
         </div>
       </div>

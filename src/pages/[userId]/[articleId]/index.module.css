@@ -34,3 +34,8 @@
 .content {
   margin-top: 24px;
 }
+
+.isNew {
+  color: #2cc;
+  margin-left: 12px;
+}
