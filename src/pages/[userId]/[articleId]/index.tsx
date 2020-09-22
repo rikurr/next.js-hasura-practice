@@ -26,7 +26,11 @@ const ArticlePage: NextPage = () => {
   if (!data || !data.articles_by_pk) {
     return <Error statusCode={404} />
   }
-  const { user, subject, content } = data.articles_by_pk
+  const { user, subject, content, publishedAt } = data.articles_by_pk
+  if (!publishedAt) {
+    return <Error statusCode={404} />
+  }
+  console.log(publishedAt)
   return (
     <div className={styles.contentContainer}>
       <h1 className={styles.subject}>{subject}</h1>
@@ -35,8 +39,12 @@ const ArticlePage: NextPage = () => {
           <img className={styles.userIcon} src="/profile.png" />
         </div>
         <div>
-          <div className={styles.userId}>{user.displayId}</div>
-          <div className={styles.username}>{user.displayName}</div>
+          <div className={styles.username}>
+            {user.displayName} @{user.displayId}
+          </div>
+          <span className={styles.publishedAt}>
+            {new Date(publishedAt).toLocaleString()}
+          </span>
         </div>
       </div>
       <div className={styles.content}>
