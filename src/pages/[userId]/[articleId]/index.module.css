@@ -1,0 +1,33 @@
+.contentContainer {
+  padding: 0 12%;
+  max-width: 1220px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.subject {
+  font-size: 32px;
+}
+
+.userContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.userId {
+  color: #aaa;
+  font-size: 14px;
+}
+.username {
+}
+
+.userIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.content {
+  margin-top: 24px;
+}
