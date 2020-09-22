@@ -39,7 +39,7 @@ const ArticlePage: NextPage = () => {
           <img className={styles.userIcon} src="/profile.png" />
         </div>
         <div>
-          <div className={styles.username}>
+          <div>
             {user.displayName} @{user.displayId}
           </div>
           <span className={styles.publishedAt}>
