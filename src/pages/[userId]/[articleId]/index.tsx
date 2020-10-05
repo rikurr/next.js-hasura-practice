@@ -7,6 +7,7 @@ import { useGetArticleQuery } from '@/generated/graphql'
 import styles from './index.module.css'
 import { Article } from '@/components/article'
 import { formatDate } from '@/utils/data'
+import { SiteHeader } from '@/components/site-header'
 
 const ArticlePage: NextPage = () => {
   const router = useRouter()
@@ -34,26 +35,29 @@ const ArticlePage: NextPage = () => {
   const { datetime, isNew } = formatDate(new Date(publishedAt), new Date())
   console.log(publishedAt)
   return (
-    <div className={styles.contentContainer}>
-      <h1 className={styles.subject}>{subject}</h1>
-      <div className={styles.userContainer}>
-        <div>
-          <img className={styles.userIcon} src="/profile.png" />
-        </div>
-        <div>
+    <>
+      <SiteHeader />
+      <div className={styles.contentContainer}>
+        <h1 className={styles.subject}>{subject}</h1>
+        <div className={styles.userContainer}>
           <div>
-            {user.displayName} @{user.displayId}
+            <img className={styles.userIcon} src="/profile.png" />
           </div>
-          <span>
-            <span className={styles.publishedAt}>{datetime}</span>
-            {isNew ? <span className={styles.isNew}>New</span> : ''}
-          </span>
+          <div>
+            <div>
+              {user.displayName} @{user.displayId}
+            </div>
+            <span>
+              <span className={styles.publishedAt}>{datetime}</span>
+              {isNew ? <span className={styles.isNew}>New</span> : ''}
+            </span>
+          </div>
+        </div>
+        <div className={styles.content}>
+          <Article content={content} />
         </div>
       </div>
-      <div className={styles.content}>
-        <Article content={content} />
-      </div>
-    </div>
+    </>
   )
 }
 
