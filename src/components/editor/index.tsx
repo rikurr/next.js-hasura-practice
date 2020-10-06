@@ -30,10 +30,10 @@ export const Editor: React.FC<Props> = ({
     },
     [onEdit],
   )
-  const _classNames = useClassNames(styles.editor, className)
+  const _className = useClassNames(styles.editor, className)
   return (
     <textarea
-      className={_classNames}
+      className={_className}
       placeholder={placeholder}
       ref={ref}
       onChange={handleChange}
