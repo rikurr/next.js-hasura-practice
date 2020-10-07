@@ -1,3 +1,59 @@
 .paragraph {
   margin-top: 12px;
 }
+
+.subject {
+  font-size: 32px;
+}
+
+.publishedAt {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.userContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.userId {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.isNew {
+  color: #2cc;
+  margin-left: 12px;
+}
+
+.articleFooter {
+  margin-top: 16px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  padding: 16px 0;
+}
+
+.userDescription {
+  font-size: 14px;
+}
+
+.aritcleFooterContainer {
+  position: relative;
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+}
+
+.tagContainer {
+  margin: 16px 0;
+}
+
+.iconContainer {
+  position: absolute;
+  right: 0;
+}
+
+.icon {
+  margin-right: 8px;
+}

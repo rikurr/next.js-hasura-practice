@@ -4,32 +4,9 @@
   font-size: 18px;
   margin: 0 auto;
   margin-top: 80px;
-}
-
-.subject {
-  font-size: 32px;
-}
-
-.publishedAt {
-  font-size: 16px;
-  opacity: 0.6;
-}
-
-.userContainer {
-  display: flex;
-  margin-top: 20px;
-}
-
-.userId {
-  color: #aaa;
-  font-size: 14px;
+  position: relative;
 }
 
 .content {
   margin-top: 24px;
-}
-
-.isNew {
-  color: #2cc;
-  margin-left: 12px;
 }
