@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import styles from './index.module.css'
 import { UserIcon } from '../user-icon'
+import { Logo } from '../logo'
 
 export { SiteHeaderItem } from './item'
 
@@ -22,7 +23,7 @@ export const SiteHeader: React.FC<Props> = ({ left, right }) => {
     left
   ) : (
     <a onClick={handleClickLogo}>
-      <div>すごいブログ</div>
+      <Logo />
     </a>
   )
 
