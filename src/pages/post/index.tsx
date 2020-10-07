@@ -8,6 +8,7 @@ import { SiteHeader, SiteHeaderItem } from '@/components/site-header'
 import { Button } from '@/components/button'
 
 import { usePostArticleMutation } from '@/generated/graphql'
+import { UserIcon } from '@/components/user-icon'
 
 const PostPage: NextPage = () => {
   const [subject, setSubject] = useState('')
@@ -62,7 +63,7 @@ const PostPage: NextPage = () => {
         </form>
       </SiteHeaderItem>
       <SiteHeaderItem>
-        <img className={styles.userIcon} src="/profile.png" />
+        <UserIcon src="/profile.png" />
       </SiteHeaderItem>
     </>
   )
